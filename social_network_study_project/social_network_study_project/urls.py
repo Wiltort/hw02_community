@@ -20,5 +20,8 @@ urlpatterns = [
     #импорт правил из приложения постс
     path("", include("posts.urls")),
     #импорт правил из приложения админ
+    path("auth/", include("Users.urls")),
+    path("auth/", include("django.contrib.auth.urls")),
     path('admin/', admin.site.urls),
+
 ]
