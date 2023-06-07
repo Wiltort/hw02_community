@@ -6,10 +6,10 @@ User = get_user_model()
 #модель сообщества
 class Group(models.Model):
     #имя сообщества
-    title = models.CharField(max_length = 50, primary_key=True)
+    title = models.CharField(max_length = 200)
     #уникальный адрес группы, часть УРЫЛ
     slug = models.SlugField(unique = True)
-    description = models.TextField()
+    description = models.TextField(blank = True, null = True)
     def __str__(self):
         return self.title
 
