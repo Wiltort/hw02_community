@@ -12,7 +12,7 @@
     {% endfor %}
 
     {% if page.has_other_pages %}
-    ...Тут код со списком страниц для листания...
+        {% include "paginator.html" with items=page paginator=paginator %}
     {% endif %}
 
 {% endblock %}

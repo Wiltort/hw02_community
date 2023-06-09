@@ -1,17 +1,33 @@
 {% extends "base.html" %}
-{% block title %}Новая запись{% endblock %}
+{% block title %}
+    {% if Edit %}
+        Добавить запись
+    {% else %}
+        Новая запись
+    {% endif %}
+{% endblock %}
 
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-md-8 p-5">
         <div class="card">
-            <div class="card-header">Новая запись</div>
+            {% if Edit %}
+                <div class="card-header">Редактировать запись</div>
+            {% else %}
+                <div class="card-header">Новая запись</div>
+            {% endif %}
+            
             <div class="card-body">
                 
                 <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <input type="submit" value="Опубликовать">
+                    {% if Edit %}
+                        <input type="submit" value="Сохранить">
+                    {% else %}
+                        <input type="submit" value="Опубликовать">
+                    {% endif %}
+                    
                 </form>
             </div> <!-- card body -->
         </div> <!-- card -->

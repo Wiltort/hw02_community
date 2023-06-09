@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'Users',
     'posts', #приложение посты
+    'django.contrib.sites',
+    'django.contrib.flatpages',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -135,3 +137,6 @@ LOGIN_REDIRECT_URL = "index"
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 # указываем директорию, в которую будут складываться файлы писем
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+
+#ид текущего сайта
+SITE_ID = 1

@@ -1,5 +1,8 @@
 from django.contrib import admin
 from .models import Post, Group
+
+from django.contrib.auth import get_user_model
+
 # Register your models here.
 
 class PostAdmin(admin.ModelAdmin):
@@ -15,7 +18,6 @@ class GroupAdmin(admin.ModelAdmin):
     list_display = ("pk","title", "slug", "description")
     search_fields = ('title',)
     empty_value_display = '-пусто-'
-
 
 # при регистрации модели Post источником конфигурации для неё назначаем класс PostAdmin
 admin.site.register(Post, PostAdmin)
