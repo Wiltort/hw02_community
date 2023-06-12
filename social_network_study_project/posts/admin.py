@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 
 class PostAdmin(admin.ModelAdmin):
     # перечисляем поля, которые должны отображаться в админке
-    list_display = ("pk", "text", "pub_date", "author", "group") 
+    list_display = ("pk", "text", "pub_date", "author", "group","image") 
     # добавляем интерфейс для поиска по тексту постов
     search_fields = ("text",) 
     # добавляем возможность фильтрации по дате
