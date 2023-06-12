@@ -104,6 +104,6 @@ def post_edit(request, username, post_id):
             post.author = request.user
             post.save()
             return redirect('post', username= username, post_id = post_id)
-        return render(request, 'new.html', {'form':form, 'Edit': True})
+        return render(request, 'new.html', {'form':form, 'Edit': True, 'post':post})
     form = PostForm(instance=post)
-    return render(request, 'new.html', {'form':form, 'Edit': True})
+    return render(request, 'new.html', {'form':form, 'Edit': True, 'post': post})
